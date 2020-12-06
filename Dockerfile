@@ -3,7 +3,7 @@ FROM  php:7.3-fpm-alpine as php
 RUN curl -sS https://getcomposer.org/installer | php && chmod +x composer.phar && mv composer.phar /usr/local/bin/composer
 RUN set -ex \
   && apk --no-cache add
-RUN  docker-php-ext-install bcmath sockets
+RUN  docker-php-ext-install bcmath sockets pdo_mysql mysqli
 
 WORKDIR /data/invillia_app/
 COPY . /data/invillia_app/

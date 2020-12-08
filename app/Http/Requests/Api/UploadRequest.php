@@ -24,8 +24,8 @@ class UploadRequest extends FormRequest
     public function rules()
     {
         return [
-            'xml1' => 'required|file|mimes:application/xml,xml',
-            'xml2' => 'required|file|mimes:application/xml,xml'
+            'customer_xml' => 'required|file|mimes:application/xml,xml',
+            'order_xml' => 'required|file|mimes:application/xml,xml'
         ];
     }
 }

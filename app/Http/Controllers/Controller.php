@@ -10,4 +10,15 @@ use Illuminate\Routing\Controller as BaseController;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    /**
+     * @OA\Info(
+     *      version="1.0.0",
+     *      title="Invillia Test",
+     *      description="Invillia Test",
+     *      @OA\Contact(
+     *          email="jonathanbeltrao@gmail.com"
+     *      )
+     * )
+     */
 }

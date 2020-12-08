@@ -1,0 +1,443 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Invillia Test",
+        "description": "Invillia Test",
+        "contact": {
+            "email": "jonathanbeltrao@gmail.com"
+        },
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/register": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Register New User",
+                "description": "Create new User",
+                "operationId": "registerUser",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "name": "Jonathan",
+                                    "email": "jonathan@gmail.com",
+                                    "password": "jSuds(*#@*"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "access_token": {
+                                            "description": "Authorization Token",
+                                            "type": "string"
+                                        },
+                                        "token_type": {
+                                            "description": "Type of Token",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object",
+                                    "example": {
+                                        "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNWY2YmI2N2QzZDRiNTNkODFkZDZkN2ZiOTk1YmZhNzBmMzgwODNmMDk4MGVjYzI2MTQ4MjhiNzQ1ODcyY2UxOTM3NDI3NThhZDVlNzIwMmQiLCJpYXQiOjE2MDc0NDYxODUsIm5iZiI6MTYwNzQ0NjE4NSwiZXhwIjoxNjM4OTgyMTg1LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.fcnYNE8v8KQX_K_1WZZB6MWWTS3IASu1CV8RmyBXKc4i0aAw_3OfU_91InzLw3PJrPRJm-pmSPFGb19E9J_QyOGOPBwrQoaUIF6Ir3PTFBEpT8P9geswFz3w53HQcqF954MgwM9-JI7aZYsqHRdJu1blUd8vquuhPsLVT0EKvKT7kIZir1IutuArQq1-xTtb_myh7I_r0-s1GhFEh-wBYU7R5GHFyAT_qmYDns9M_J-suLWMeXcugBDiYOBTrWFv_54TwJIW8L-RYrRXdetekn0ndxXqn4StPvAUpXTBnpqTphPHF2o8lIy0wptCgzrQsV5VXzkj80pbWPZDY01O-I1aMpHSCDwzU4BH3It2LLxLezsln881NkPRD5d-hXQeDCJ88ZnTGk5H3pcUxGrhHs8dYFU9CQ9C1EeKuVYt3XsT1Cbo9Ha-qN-xly_4WbIbNnltnE_AOo92PvWeOXrvSoFCbi6yTKR_ygJskFDW5menTIzEbKbmcvwhfdDPU6iN_V7nA2uQXGt6ApKzj5WsXwUiTaZpPkivEc7n1dF_nriz93AsaVtrB_dmuEsS28q8zIMt3F9uYSwwFS0jL3vWvGhxUBmWy440I6RePWEnTc_fTW-o_BC-iBvhNspwGyR4QySAnP48aMPD0muHij_Q-ZEMafKR_26kFSUC08UXFOA",
+                                        "token_type": "Bearer"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/api/login": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Login User",
+                "description": "Login user to Generate Token",
+                "operationId": "loginUser",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "name": "Jonathan",
+                                    "email": "jonathan@gmail.com",
+                                    "password": "jSuds(*#@*"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "access_token": {
+                                            "description": "Authorization Token",
+                                            "type": "string"
+                                        },
+                                        "token_type": {
+                                            "description": "Type of Token",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object",
+                                    "example": {
+                                        "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNWY2YmI2N2QzZDRiNTNkODFkZDZkN2ZiOTk1YmZhNzBmMzgwODNmMDk4MGVjYzI2MTQ4MjhiNzQ1ODcyY2UxOTM3NDI3NThhZDVlNzIwMmQiLCJpYXQiOjE2MDc0NDYxODUsIm5iZiI6MTYwNzQ0NjE4NSwiZXhwIjoxNjM4OTgyMTg1LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.fcnYNE8v8KQX_K_1WZZB6MWWTS3IASu1CV8RmyBXKc4i0aAw_3OfU_91InzLw3PJrPRJm-pmSPFGb19E9J_QyOGOPBwrQoaUIF6Ir3PTFBEpT8P9geswFz3w53HQcqF954MgwM9-JI7aZYsqHRdJu1blUd8vquuhPsLVT0EKvKT7kIZir1IutuArQq1-xTtb_myh7I_r0-s1GhFEh-wBYU7R5GHFyAT_qmYDns9M_J-suLWMeXcugBDiYOBTrWFv_54TwJIW8L-RYrRXdetekn0ndxXqn4StPvAUpXTBnpqTphPHF2o8lIy0wptCgzrQsV5VXzkj80pbWPZDY01O-I1aMpHSCDwzU4BH3It2LLxLezsln881NkPRD5d-hXQeDCJ88ZnTGk5H3pcUxGrhHs8dYFU9CQ9C1EeKuVYt3XsT1Cbo9Ha-qN-xly_4WbIbNnltnE_AOo92PvWeOXrvSoFCbi6yTKR_ygJskFDW5menTIzEbKbmcvwhfdDPU6iN_V7nA2uQXGt6ApKzj5WsXwUiTaZpPkivEc7n1dF_nriz93AsaVtrB_dmuEsS28q8zIMt3F9uYSwwFS0jL3vWvGhxUBmWy440I6RePWEnTc_fTW-o_BC-iBvhNspwGyR4QySAnP48aMPD0muHij_Q-ZEMafKR_26kFSUC08UXFOA",
+                                        "token_type": "Bearer"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/api/customers": {
+            "get": {
+                "tags": [
+                    "Customer"
+                ],
+                "summary": "Get all Customers and its info",
+                "description": "Get all Customers and its info",
+                "operationId": "getCustomers",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "description": "Customer ID",
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "description": "Customer Name",
+                                            "type": "string"
+                                        },
+                                        "orders": {
+                                            "description": "Customer Orders",
+                                            "type": "string"
+                                        },
+                                        "phones": {
+                                            "description": "Customer Phones",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object",
+                                    "example": [
+                                        {
+                                            "id": 1,
+                                            "customer_id": 1,
+                                            "address": {
+                                                "id": 10,
+                                                "order_id": 1,
+                                                "name": "Name 1",
+                                                "address": "Address 1",
+                                                "city": "City 1",
+                                                "country": "Country 1"
+                                            },
+                                            "items": [
+                                                {
+                                                    "id": 9,
+                                                    "order_id": 1,
+                                                    "title": "Title 1",
+                                                    "note": "Note 1",
+                                                    "quantity": 745,
+                                                    "price": 123.45
+                                                }
+                                            ],
+                                            "phones": [
+                                                {
+                                                    "id": 76,
+                                                    "customer_id": 1,
+                                                    "number": "2345678",
+                                                    "created_at": "2020-12-08T05:45:15.000000Z",
+                                                    "updated_at": "2020-12-08T05:45:15.000000Z",
+                                                    "deleted_at": null
+                                                },
+                                                {
+                                                    "id": 77,
+                                                    "customer_id": 1,
+                                                    "number": "1234567",
+                                                    "created_at": "2020-12-08T05:45:15.000000Z",
+                                                    "updated_at": "2020-12-08T05:45:15.000000Z",
+                                                    "deleted_at": null
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/api/customer/{id}": {
+            "get": {
+                "tags": [
+                    "Customer"
+                ],
+                "summary": "Get a Customers by its ID",
+                "description": "Get a Customer and its info",
+                "operationId": "getCustomer",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Customer ID",
+                        "required": true,
+                        "schema": {
+                            "type": "int"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "description": "Customer ID",
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "description": "Customer Name",
+                                            "type": "string"
+                                        },
+                                        "orders": {
+                                            "description": "Customer Orders",
+                                            "type": "string"
+                                        },
+                                        "phones": {
+                                            "description": "Customer Phones",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object",
+                                    "example": {
+                                        "id": 1,
+                                        "customer_id": 1,
+                                        "address": {
+                                            "id": 10,
+                                            "order_id": 1,
+                                            "name": "Name 1",
+                                            "address": "Address 1",
+                                            "city": "City 1",
+                                            "country": "Country 1"
+                                        },
+                                        "items": [
+                                            {
+                                                "id": 9,
+                                                "order_id": 1,
+                                                "title": "Title 1",
+                                                "note": "Note 1",
+                                                "quantity": 745,
+                                                "price": 123.45
+                                            }
+                                        ],
+                                        "phones": [
+                                            {
+                                                "id": 76,
+                                                "customer_id": 1,
+                                                "number": "2345678",
+                                                "created_at": "2020-12-08T05:45:15.000000Z",
+                                                "updated_at": "2020-12-08T05:45:15.000000Z",
+                                                "deleted_at": null
+                                            },
+                                            {
+                                                "id": 77,
+                                                "customer_id": 1,
+                                                "number": "1234567",
+                                                "created_at": "2020-12-08T05:45:15.000000Z",
+                                                "updated_at": "2020-12-08T05:45:15.000000Z",
+                                                "deleted_at": null
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/api/upload": {
+            "post": {
+                "tags": [
+                    "Xml"
+                ],
+                "summary": "Upload XML",
+                "description": "Upload given XML",
+                "operationId": "uploadXml",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "customer_xml": {
+                                        "type": "file"
+                                    },
+                                    "order_xml": {
+                                        "type": "file"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "customer_xml": "customer.xml",
+                                    "order_xml": "order.xml"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "sucess": {
+                                            "description": "Status",
+                                            "type": "boolean"
+                                        }
+                                    },
+                                    "type": "object",
+                                    "example": {
+                                        "success": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "sucess": {
+                                            "description": "Status",
+                                            "type": "boolean"
+                                        }
+                                    },
+                                    "type": "object",
+                                    "example": {
+                                        "success": false
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "sucess": {
+                                            "description": "Status",
+                                            "type": "boolean"
+                                        }
+                                    },
+                                    "type": "object",
+                                    "example": {
+                                        "success": false
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "security": [
+        []
+    ]
+}

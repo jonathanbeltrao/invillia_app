@@ -16,6 +16,97 @@ class XmlController extends Controller
         $this->service = $service;
     }
 
+    /**
+     * @OA\Post(
+     *      path="/api/upload",
+     *      operationId="uploadXml",
+     *      tags={"Xml"},
+     *      summary="Upload XML",
+     *      description="Upload given XML",
+     *      @OA\RequestBody(
+     *         @OA\MediaType(
+     *             mediaType="multipart/form-data",
+     *             @OA\Schema(
+     *                 @OA\Property(
+     *                     property="customer_xml",
+     *                     type="file",
+     *                 ),
+     *                 @OA\Property(
+     *                     property="order_xml",
+     *                     type="file",
+     *                 ),
+     *                 example={"customer_xml": "customer.xml", "order_xml": "order.xml"}
+     *             )
+     *         )
+     *     ),
+     *      @OA\Response(
+     *          response=200,
+     *          description="Successful operation",
+     *          content={
+     *             @OA\MediaType(
+     *                 mediaType="application/json",
+     *                 @OA\Schema(
+     *                     @OA\Property(
+     *                         property="sucess",
+     *                         type="boolean",
+     *                         description="Status"
+     *                     ),
+     *                     example={
+     *                         "success": true,
+     *                     }
+     *                 )
+     *             )
+     *         }
+     *       ),
+     *      @OA\Response(
+     *          response=400,
+     *          description="Bad Request",
+     *          content={
+     *             @OA\MediaType(
+     *                 mediaType="application/json",
+     *                 @OA\Schema(
+     *                     @OA\Property(
+     *                         property="sucess",
+     *                         type="boolean",
+     *                         description="Status"
+     *                     ),
+     *                     example={
+     *                         "success": false,
+     *                     }
+     *                 )
+     *             )
+     *         }
+     *      ),
+     *      @OA\Response(
+     *          response=401,
+     *          description="Unauthenticated",
+     *      ),
+     *      @OA\Response(
+     *          response=403,
+     *          description="Forbidden"
+     *      ),
+     *     @OA\Response(
+     *          response=500,
+     *          description="Internal Server Error",
+     *          content={
+     *             @OA\MediaType(
+     *                 mediaType="application/json",
+     *                 @OA\Schema(
+     *                     @OA\Property(
+     *                         property="sucess",
+     *                         type="boolean",
+     *                         description="Status"
+     *                     ),
+     *                     example={
+     *                         "success": false,
+     *                     }
+     *                 )
+     *             )
+     *         }
+     *      ),
+     * )
+     */
+
     public function upload(UploadRequest $request)
     {
         try {

@@ -50,49 +50,49 @@ class CustomerController extends Controller
      *                         description="Customer Phones"
      *                     ),
      *                     example={
-    {
-        "id": 1,
-        "customer_id": 1,
-        "address": {
-            "id": 10,
-            "order_id": 1,
-            "name": "Name 1",
-            "address": "Address 1",
-            "city": "City 1",
-            "country": "Country 1"
-        },
-        "items": {
-     *     {
-                "id": 9,
-                "order_id": 1,
-                "title": "Title 1",
-                "note": "Note 1",
-                "quantity": 745,
-                "price": 123.45
-     *     }
-        },
-        "phones":{
-            {
-                "id": 76,
-                "customer_id": 1,
-                "number": "2345678",
-                "created_at": "2020-12-08T05:45:15.000000Z",
-                "updated_at": "2020-12-08T05:45:15.000000Z",
-                "deleted_at": null
-            },
-            {
-                "id": 77,
-                "customer_id": 1,
-                "number": "1234567",
-                "created_at": "2020-12-08T05:45:15.000000Z",
-                "updated_at": "2020-12-08T05:45:15.000000Z",
-                "deleted_at": null
-            },
-        }
-*     },
-*     },
-     *                 )
-     *             )
+                    {
+                        "id": 1,
+                        "customer_id": 1,
+                        "address": {
+                            "id": 10,
+                            "order_id": 1,
+                            "name": "Name 1",
+                            "address": "Address 1",
+                            "city": "City 1",
+                            "country": "Country 1"
+                        },
+                        "items": {
+                            {
+                                "id": 9,
+                                "order_id": 1,
+                                "title": "Title 1",
+                                "note": "Note 1",
+                                "quantity": 745,
+                                "price": 123.45
+                            }
+                        },
+                        "phones":{
+                            {
+                                "id": 76,
+                                "customer_id": 1,
+                                "number": "2345678",
+                                "created_at": "2020-12-08T05:45:15.000000Z",
+                                "updated_at": "2020-12-08T05:45:15.000000Z",
+                                "deleted_at": null
+                            },
+                            {
+                                "id": 77,
+                                "customer_id": 1,
+                                "number": "1234567",
+                                "created_at": "2020-12-08T05:45:15.000000Z",
+                                "updated_at": "2020-12-08T05:45:15.000000Z",
+                                "deleted_at": null
+                            },
+                        }
+     *                  },
+     *               },
+     *         )
+     *        )
      *         }
      *       ),
      *      @OA\Response(

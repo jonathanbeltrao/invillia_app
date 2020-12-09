@@ -92,9 +92,6 @@
                         "application/json": {
                             "schema": {
                                 "properties": {
-                                    "name": {
-                                        "type": "string"
-                                    },
                                     "email": {
                                         "type": "string"
                                     },
@@ -104,7 +101,6 @@
                                 },
                                 "type": "object",
                                 "example": {
-                                    "name": "Jonathan",
                                     "email": "jonathan@gmail.com",
                                     "password": "jSuds(*#@*"
                                 }

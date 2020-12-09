@@ -108,10 +108,6 @@ class AuthController extends Controller
      *             mediaType="application/json",
      *             @OA\Schema(
      *                 @OA\Property(
-     *                     property="name",
-     *                     type="string"
-     *                 ),
-     *                 @OA\Property(
      *                     property="email",
      *                     type="string"
      *                 ),
@@ -119,7 +115,7 @@ class AuthController extends Controller
      *                     property="password",
      *                     type="string"
      *                 ),
-     *                 example={"name": "Jonathan", "email": "jonathan@gmail.com", "password": "jSuds(*#@*"}
+     *                 example={"email": "jonathan@gmail.com", "password": "jSuds(*#@*"}
      *             )
      *         )
      *     ),

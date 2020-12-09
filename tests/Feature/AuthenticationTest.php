@@ -15,7 +15,6 @@ class AuthenticationTest extends TestCase
     {
         parent::setUp();
         $this->artisan('passport:install');
-
     }
 
     public function testRegister()
@@ -37,7 +36,6 @@ class AuthenticationTest extends TestCase
 
     public function testLogin()
     {
-
         $userService = new UserService();
 
         $userService->create([

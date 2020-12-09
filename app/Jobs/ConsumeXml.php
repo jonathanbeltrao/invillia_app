@@ -57,9 +57,7 @@ class ConsumeXml implements ShouldQueue
             $orderXml = json_encode(simplexml_load_string($orderFile));
             $arrayOrders = json_decode($orderXml);
 
-            dd($this->orderService->create($arrayOrders));
+            $this->orderService->create($arrayOrders);
         }
-
-
     }
 }

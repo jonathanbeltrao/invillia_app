@@ -16,7 +16,6 @@ class OrderService
         try {
             DB::beginTransaction();
             foreach ($data->shiporder as $order) {
-                Log::info($order->orderid);
                 if (!Order::find($order->orderid)) {
                     Order::create([
                         'id' => $order->orderid,
@@ -64,5 +63,10 @@ class OrderService
     public function all()
     {
         return Order::all()->load(['items', 'address']);
+    }
+
+    public function get($id)
+    {
+        return Order::find($id)->load(['items', 'address']);
     }
 }
